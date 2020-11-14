@@ -87,5 +87,8 @@ class Tests {
         assertEquals(2, segmentLength(2, 5, 3, 9))
         assertEquals(1, segmentLength(3, 6, 1, 4))
         assertEquals(4, segmentLength(1, 15, 10, 14))
+        assertEquals(0, segmentLength(10, 10, 7, 14))
+        assertEquals(0, segmentLength(1, 15, 14, 14))
+        assertEquals(0, segmentLength(6, 6, 6, 14))
     }
 }
