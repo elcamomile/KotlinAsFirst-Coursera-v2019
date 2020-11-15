@@ -54,7 +54,14 @@ fun daysInMonth(month: Int, year: Int): Int = TODO()
 fun circleInside(
     x1: Double, y1: Double, r1: Double,
     x2: Double, y2: Double, r2: Double
-): Boolean = TODO()
+): Boolean {
+    val rightBorder: Boolean = sqr(x1 + r1 - x2) + sqr(y1 - y2) <= sqr(r2)
+    val leftBorder: Boolean = sqr(x1 - r1 - x2) + sqr(y1 - y2) <= sqr(r2)
+    val upperBorder: Boolean = sqr(x1 - x2) + sqr(y1 + r1 - y2) <= sqr(r2)
+    val lowerBorder: Boolean = sqr(x1 - x2) + sqr(y1 - r1 - y2) <= sqr(r2)
+    return rightBorder && leftBorder && upperBorder && lowerBorder
+}
+
 
 /**
  * Средняя
